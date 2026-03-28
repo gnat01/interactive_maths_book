@@ -1,0 +1,145 @@
+/* ── THE MATHEMAGICAL BUREAU — Design Tokens ───────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Palette */
+  --color-bg:           #1a0f07;
+  --color-bg-card:      #231408;
+  --color-bg-raised:    #2e1a0e;
+  --color-parchment:    #c8a96e;
+  --color-parchment-lt: #e8d5b0;
+  --color-ink:          #f0e6d3;
+  --color-ink-dim:      #a89070;
+  --color-ink-faint:    #6b5540;
+
+  /* Accents */
+  --color-gold:         #c9a84c;
+  --color-gold-bright:  #e8c96a;
+  --color-gold-dim:     #7a6530;
+  --color-teal:         #4cb8c9;
+  --color-teal-bright:  #6ed4e4;
+  --color-teal-dim:     #2a6e7a;
+  --color-red-wax:      #8b2020;
+  --color-red-wax-lt:   #c03030;
+
+  /* Status colours */
+  --color-locked:       #3a2a1a;
+  --color-available:    #c9a84c;
+  --color-completed:    #4cb8c9;
+  --color-cold:         #7090b8;
+
+  /* Typography */
+  --font-serif:         'IM Fell English', 'Crimson Text', Georgia, serif;
+  --font-body:          'Crimson Text', Georgia, serif;
+  --font-mono:          'Courier Prime', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   40px;
+  --space-2xl:  64px;
+
+  /* Borders */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+
+  /* Shadows */
+  --shadow-card:    0 4px 24px rgba(0,0,0,0.6);
+  --shadow-glow-gold: 0 0 12px rgba(201,168,76,0.3);
+  --shadow-glow-teal: 0 0 12px rgba(76,184,201,0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-med:  300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* ── Reset & Base ───────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle parchment texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.4rem;  color: var(--color-gold); }
+h2 { font-size: 1.8rem;  color: var(--color-parchment-lt); }
+h3 { font-size: 1.4rem;  color: var(--color-parchment); }
+
+p  { margin-bottom: var(--space-md); }
+
+code, .mono {
+  font-family: var(--font-mono);
+  color: var(--color-teal);
+  font-size: 0.95em;
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-gold-bright);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* ── Utility classes ────────────────────────────────────────────────────── */
+
+.text-gold      { color: var(--color-gold); }
+.text-teal      { color: var(--color-teal); }
+.text-dim       { color: var(--color-ink-dim); }
+.text-serif     { font-family: var(--font-serif); }
+.text-mono      { font-family: var(--font-mono); }
+.text-italic    { font-style: italic; }
+.text-center    { text-align: center; }
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-ink-faint);
+  margin: var(--space-lg) 0;
+}
+
+.divider--gold {
+  border-top-color: var(--color-gold-dim);
+}

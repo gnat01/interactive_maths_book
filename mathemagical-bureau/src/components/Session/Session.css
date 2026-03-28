@@ -1,0 +1,176 @@
+.session {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg);
+}
+
+.session--empty {
+  justify-content: center;
+}
+
+.session__empty-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 480px;
+  text-align: center;
+}
+
+.session__empty-card h2 { color: var(--color-ink-dim); margin-bottom: var(--space-md); }
+.session__empty-card p  { color: var(--color-ink-dim); font-style: italic; margin-bottom: var(--space-lg); }
+
+.session__back-btn {
+  background: transparent;
+  border: 1px solid var(--color-ink-faint);
+  color: var(--color-ink-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.session__back-btn:hover { border-color: var(--color-ink-dim); color: var(--color-ink); }
+
+/* ── Phase indicator ────────────────────────────────────────────────────── */
+
+.phase-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0 var(--space-xl);
+  width: 100%;
+  max-width: 680px;
+}
+
+.phase-indicator__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  opacity: 0.3;
+  transition: opacity var(--transition-med);
+}
+
+.phase-indicator__step--active { opacity: 1; }
+.phase-indicator__step--done   { opacity: 0.6; }
+
+.phase-indicator__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-ink-faint);
+  transition: background var(--transition-med);
+}
+
+.phase-indicator__step--active .phase-indicator__dot { background: var(--color-gold); }
+.phase-indicator__step--done   .phase-indicator__dot { background: var(--color-teal); }
+
+.phase-indicator__label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-dim);
+}
+
+.phase-indicator__step--active .phase-indicator__label { color: var(--color-gold); }
+
+/* ── Debrief ────────────────────────────────────────────────────────────── */
+
+.debrief {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.debrief__card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-teal-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-glow-teal), var(--shadow-card);
+}
+
+.debrief__stamp {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-teal);
+  border: 2px solid var(--color-teal);
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-lg);
+  transform: rotate(-2deg);
+}
+
+.debrief__title {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.debrief__subtitle {
+  color: var(--color-ink-dim);
+  font-style: italic;
+  margin-bottom: var(--space-xl);
+}
+
+.debrief__stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.debrief__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.debrief__stat-value {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-parchment-lt);
+}
+
+.debrief__stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.debrief__unlock {
+  color: var(--color-gold);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+.debrief__btn {
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.debrief__btn:hover {
+  background: var(--color-gold);
+  color: var(--color-bg);
+}

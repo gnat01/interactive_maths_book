@@ -1,0 +1,70 @@
+.concept {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--space-lg);
+  width: 100%;
+}
+
+.concept__card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 640px;
+  width: 100%;
+  box-shadow: var(--shadow-card);
+}
+
+.concept__step-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-lg);
+}
+
+.concept__heading {
+  font-size: 1.6rem;
+  color: var(--color-parchment-lt);
+  margin-bottom: var(--space-lg);
+}
+
+.concept__content {
+  color: var(--color-ink-dim);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-lg);
+  white-space: pre-line;
+}
+
+.concept__visual-placeholder {
+  background: var(--color-bg-raised);
+  border: 1px dashed var(--color-ink-faint);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+  text-align: center;
+  color: var(--color-ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-lg);
+}
+
+.concept__btn {
+  background: transparent;
+  border: 1px solid var(--color-teal);
+  color: var(--color-teal);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.04em;
+}
+
+.concept__btn:hover {
+  background: var(--color-teal);
+  color: var(--color-bg);
+}

@@ -1,0 +1,153 @@
+.case-node {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: border-color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-ink);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inner body is the clickable card area */
+.case-node__body {
+  padding: var(--space-lg);
+  cursor: pointer;
+  flex: 1;
+  outline: none;
+}
+
+.case-node__body:hover,
+.case-node__body:focus-visible {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.case-node:has(.case-node__body:hover):not(.case-node--locked) {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-glow-gold), var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.case-node--locked {
+  opacity: 0.45;
+  filter: grayscale(0.5);
+}
+
+.case-node--locked .case-node__body {
+  cursor: not-allowed;
+}
+
+.case-node--completed {
+  border-color: var(--color-teal-dim);
+}
+
+.case-node--completed:has(.case-node__body:hover) {
+  border-color: var(--color-teal);
+  box-shadow: var(--shadow-glow-teal), var(--shadow-card);
+}
+
+/* Drill button at the bottom of the card */
+.case-node__drill-btn {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--color-ink-faint);
+  color: var(--color-teal-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: var(--space-sm) var(--space-lg);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast), background var(--transition-fast);
+  width: 100%;
+}
+
+.case-node__drill-btn:hover {
+  color: var(--color-teal);
+  background: rgba(76, 184, 201, 0.06);
+}
+
+/* ── Header row ─────────────────────────────────────────────────────────── */
+
+.case-node__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.case-node__type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.case-node__status {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.08em;
+}
+
+.case-node__status--available    { color: var(--color-gold);     border: 1px solid var(--color-gold-dim); }
+.case-node__status--in-progress  { color: var(--color-gold-bright); border: 1px solid var(--color-gold); }
+.case-node__status--completed    { color: var(--color-teal);     border: 1px solid var(--color-teal-dim); }
+.case-node__status--locked       { color: var(--color-ink-faint); border: 1px solid var(--color-ink-faint); }
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+
+.case-node__number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--color-gold-dim);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.case-node__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-parchment-lt);
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.case-node__subtitle {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-ink-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.case-node__topic {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-teal-dim);
+  margin: 0;
+}
+
+/* ── CLOSED stamp ───────────────────────────────────────────────────────── */
+
+.case-node__closed-stamp {
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%) rotate(-15deg);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-teal);
+  border: 2px solid var(--color-teal);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+  pointer-events: none;
+  letter-spacing: 0.1em;
+}
