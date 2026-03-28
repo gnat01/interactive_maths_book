@@ -1,0 +1,69 @@
+/* ── MathText — KaTeX on dark backgrounds ───────────────────────────────── */
+
+.math-text {
+  /* Inherit parent flow */
+}
+
+.math-text__plain {
+  /* Plain text fragments inherit everything from parent */
+}
+
+.math-text__math--inline .katex {
+  color: var(--color-parchment-lt);
+  font-size: 1.05em;
+}
+
+.math-text__math--block {
+  display: block;
+  text-align: center;
+  margin: var(--space-md) 0;
+}
+
+.math-text__math--block .katex-display {
+  color: var(--color-parchment-lt);
+  margin: var(--space-sm) 0;
+}
+
+.math-text__math--block .katex {
+  color: var(--color-parchment-lt);
+  font-size: 1.2em;
+}
+
+/* KaTeX global overrides for dark theme */
+.katex {
+  color: var(--color-parchment-lt);
+}
+
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  color: inherit;
+}
+
+/* Make fraction bars and operators match the teal accent */
+.katex .mfrac .frac-line {
+  border-bottom-color: var(--color-teal);
+}
+
+/* Math error fallback */
+.math-error {
+  color: var(--color-red-wax-lt);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0 2px;
+  border: 1px dashed var(--color-red-wax);
+  border-radius: 2px;
+}
+
+/* ── MathBlock ───────────────────────────────────────────────────────────── */
+.math-block {
+  display: block;
+}
+
+.math-block__line {
+  display: inline;
+}

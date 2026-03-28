@@ -1,0 +1,272 @@
+/* ── Drill mode ──────────────────────────────────────────────────────────── */
+
+.drill {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl) var(--space-lg);
+  gap: var(--space-lg);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.drill__header {
+  text-align: center;
+  width: 100%;
+  max-width: 560px;
+}
+
+.drill__badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--color-teal);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.drill__title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-parchment-lt);
+  margin: 0 0 var(--space-md);
+}
+
+.drill__stats {
+  display: flex;
+  gap: var(--space-xl);
+  justify-content: center;
+  align-items: baseline;
+}
+
+.drill__streak-block {
+  text-align: center;
+}
+
+.drill__streak-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-dim);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.drill__streak-value {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  color: var(--color-gold);
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.drill__streak-value--pop {
+  transform: scale(1.25);
+  color: var(--color-gold-bright, var(--color-gold));
+}
+
+.drill__best-value {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  color: var(--color-ink-dim);
+  line-height: 1;
+}
+
+.drill__difficulty {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-ink-dim);
+  letter-spacing: 0.05em;
+}
+
+/* ── Problem card ────────────────────────────────────────────────────────── */
+
+.drill__card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-lg, var(--radius-md));
+  padding: var(--space-xl);
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.drill__card--correct {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 18px rgba(201, 168, 76, 0.18);
+}
+
+.drill__card--wrong {
+  border-color: var(--color-ink-faint);
+}
+
+.drill__question {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-ink);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.drill__feedback {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-ink-dim);
+  font-style: italic;
+}
+
+.drill__feedback--correct {
+  color: var(--color-gold);
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.drill__reveal {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-teal);
+}
+
+/* ── Input row ───────────────────────────────────────────────────────────── */
+
+.drill__form {
+  display: flex;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+.drill__input {
+  flex: 1;
+  background: var(--color-bg);
+  border: 1px solid var(--color-ink-faint);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.drill__input:focus {
+  border-color: var(--color-gold);
+}
+
+.drill__submit {
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.drill__submit:hover:not(:disabled) {
+  background: var(--color-gold);
+  color: var(--color-bg);
+}
+
+.drill__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── MC choices ──────────────────────────────────────────────────────────── */
+
+.drill__choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.drill__choice {
+  background: transparent;
+  border: 1px solid var(--color-ink-faint);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.drill__choice:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.drill__choice--selected {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+/* ── Action buttons ──────────────────────────────────────────────────────── */
+
+.drill__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.drill__next {
+  background: var(--color-gold);
+  border: none;
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all var(--transition-fast);
+}
+
+.drill__next:hover {
+  filter: brightness(1.1);
+}
+
+.drill__skip {
+  background: transparent;
+  border: 1px solid var(--color-ink-faint);
+  color: var(--color-ink-dim);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.drill__skip:hover {
+  border-color: var(--color-ink-dim);
+  color: var(--color-ink);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.drill__exit {
+  background: transparent;
+  border: none;
+  color: var(--color-ink-dim);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+  padding: var(--space-sm);
+}
+
+.drill__exit:hover {
+  color: var(--color-ink);
+}
