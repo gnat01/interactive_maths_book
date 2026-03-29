@@ -2,6 +2,7 @@
 
 > This document covers the full technical architecture. Agree on this before touching code.
 Important to note this is a V0. We will make mods based on learning pace, interest in various directions, and other parameters.
+Loosley inspired by Martin Gardner ; all of te many shortcomings solely the author's!
 
 ---
 
